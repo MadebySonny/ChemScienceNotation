@@ -1,7 +1,7 @@
 # ScienceNotations
 
 A copy-paste library of mathematical, physics, and chemistry notations and constants for STEM
-lab reports — restyled to match the [ChemBench](https://o-tran.github.io/chembench/) theme.
+lab reports restyled to match the [ChemBench](https://o-tran.github.io/chembench/) theme.
 Click any button to copy it; formatted notations (exponents, subscripts) paste correctly into
 Word and Google Docs instead of as raw text.
 
@@ -71,6 +71,8 @@ block and add a matching entry to the `<nav class="toc">` list at the top of `in
 scroll-spy highlighting in `script.js` picks up any section with an `id` automatically.
 
 ## Content notes
+
+Original Version: [Science notation](https://o-tran.github.io/ScienceNotations/)
 
 A few bugs from the original site were fixed during this restyle — see the conversation this was
 built in for the full list (mislabeled units on Light Year, Solar Mass, and electron/proton mass;
