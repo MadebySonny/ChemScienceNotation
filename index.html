@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScienceNotations — Copy Mathematical Notations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <h1><span class="glyph">π</span> ScienceNotations</h1>
+      <span class="eyebrow">copy-paste notation & constants library</span>
+    </div>
+    <a class="badge" href="https://o-tran.github.io/chembench/" target="_blank" rel="noopener">chembench companion</a>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-link active" href="index.html">Notations</a>
+    <a class="nav-link" href="greek-alphabet.html">Greek Alphabet</a>
+    <a class="nav-link external" href="https://o-tran.github.io/chembench/" target="_blank" rel="noopener">ChemBench ↗</a>
+  </div>
+</nav>
+
+<main>
+  <div class="hero">
+    <h2>A go-to reference for STEM lab reports</h2>
+    <p>Click any button to copy it — formatted notations paste correctly into Word and Google Docs, not as raw text.</p>
+    <ol>
+      <li>Find your section, either by scrolling or using the contents list on the left.</li>
+      <li>Click a button to copy that constant or notation.</li>
+      <li>Paste directly into your lab report or notes.</li>
+    </ol>
+  </div>
+
+  <div class="workbench">
+    <nav class="toc" aria-label="Table of contents">
+      <span class="toc-label">Jump to</span>
+      <ul>
+        <li><a href="#section-1">1. Basic Math</a></li>
+        <li><a href="#section-2">2. Physics</a></li>
+        <li><a href="#section-3">3. Common Units</a></li>
+        <li><a href="#section-4">4. Electromagnetic</a></li>
+        <li><a href="#section-5">5. Statistics</a></li>
+        <li><a href="#section-6">6. Molecular & Chemical</a></li>
+        <li><a href="#section-7">7. Probability</a></li>
+        <li><a href="#section-8">8. Quantum Mechanics</a></li>
+        <li><a href="#section-9">9. Thermodynamics</a></li>
+        <li><a href="#section-10">10. Special Relativity</a></li>
+        <li><a href="#section-11">11. General Relativity</a></li>
+        <li><a href="#section-12">12. Astrophysics</a></li>
+      </ul>
+    </nav>
+
+    <div class="sections">
+
+      <!-- Section 1: Basic Mathematical Notations -->
+      <section class="notation-section" id="section-1">
+        <h2><span class="section-index">01</span> Basic Mathematical Notations</h2>
+        <div class="copy-grid">
+          <button class="copy-chip" onclick="copyRich('10<sup>n</sup>&nbsp;', '10^n', this)"><span class="sym">10ⁿ</span> Exponents</button>
+          <button class="copy-chip" onclick="copyRich('x<sup>2</sup>&nbsp;', 'x^2', this)"><span class="sym">x²</span> Squared</button>
+          <button class="copy-chip" onclick="copyRich('x<sup>3</sup>&nbsp;', 'x^3', this)"><span class="sym">x³</span> Cubed</button>
+          <button class="copy-chip" onclick="copyPlain('√', this)"><span class="sym">√</span> Roots</button>
+          <button class="copy-chip" onclick="copyRich('<sup>3</sup>√', '3√', this)"><span class="sym">³√</span> Cube Roots</button>
+          <button class="copy-chip" onclick="copyPlain('π', this)"><span class="sym">π</span> Pi</button>
+          <button class="copy-chip" onclick="copyPlain('√-1', this)"><span class="sym">√-1</span> Imaginary Unit (i)</button>
+          <button class="copy-chip" onclick="copyPlain('Σ', this)"><span class="sym">Σ</span> Summation</button>
+          <button class="copy-chip" onclick="copyPlain('Π', this)"><span class="sym">Π</span> Product</button>
+          <button class="copy-chip" onclick="copyRich('<sup>n</sup><sub>i</sub>&nbsp;', 'n_i', this)"><span class="sym">ⁿᵢ</span> Subscript + Superscript</button>
+          <button class="copy-chip" onclick="copyRich('Log<sub>10</sub>&nbsp;', 'Log10', this)"><span class="sym">Log₁₀</span> Logarithm base 10</button>
+          <button class="copy-chip" onclick="copyRich('N(t) = N<sub>0</sub>e<sup>kt</sup>&nbsp;', 'N(t) = N0*e^kt', this)"><span class="sym">N(t)=N₀eᵏᵗ</span> Exponential Decay/Growth</button>
+        </div>
+        <h4>Mathematical Constants</h4>
+        <div class="copy-grid constants">
+          <button class="copy-chip" onclick="copyPlain('3.14159269', this)"><span class="sym">3.14159269</span> Pi number</button>
+          <button class="copy-chip" onclick="copyPlain('2.718', this)"><span class="sym">2.718</span> Euler's Number (e)</button>
+        </div>
+      </section>
+
+      <!-- Section 2: Physics -->
+      <section class="notation-section" id="section-2">
+        <h2><span class="section-index">02</span> Physics</h2>
+        <div class="copy-grid">
+          <button class="copy-chip" onclick="copyPlain('°F', this)"><span class="sym">°F</span> Fahrenheit</button>
+          <button class="copy-chip" onclick="copyPlain('°C', this)"><span class="sym">°C</span> Celsius</button>
+          <button class="copy-chip" onclick="copyPlain('°K', this)"><span class="sym">°K</span> Kelvin</button>
+          <button class="copy-chip" onclick="copyRich('k<sub>B</sub>&nbsp;', 'k_B', this)"><span class="sym">k_B</span> Boltzmann Notation</button>
+          <button class="copy-chip" onclick="copyRich('N<sub>A</sub>&nbsp;', 'N_A', this)"><span class="sym">N_A</span> Avogadro's Notation</button>
+        </div>
+        <h4>Physics Constants</h4>
+        <div class="copy-grid constants">
+          <button class="copy-chip" onclick="copyRich('3.00 × 10<sup>8</sup> m/s', '3.00 x 10^8 m/s', this)"><span class="sym">3.00×10⁸ m/s</span> Speed of Light (c)</button>
+          <button class="copy-chip" onclick="copyRich('6.674 × 10<sup>-11</sup> m<sup>-3</sup> kg<sup>-1</sup> s<sup>-2</sup>&nbsp;', '6.674 x 10^-11 m^-3 kg^-1 s^-2', this)"><span class="sym">6.674×10⁻¹¹</span> Gravitational Constant (G)</button>
+          <button class="copy-chip" onclick="copyRich('6.626 × 10<sup>-34</sup> J⋅s', '6.626 x 10^-34 J*s', this)"><span class="sym">6.626×10⁻³⁴ J·s</span> Planck's Constant (h)</button>
+          <button class="copy-chip" onclick="copyRich('1.38 × 10<sup>-23</sup> J/K', '1.38 x 10^-23 J/K', this)"><span class="sym">1.38×10⁻²³ J/K</span> Boltzmann Constant</button>
+          <button class="copy-chip" onclick="copyRich('6.022 × 10<sup>23</sup> mol<sup>-1</sup>&nbsp;', '6.022 x 10^23 mol^-1', this)"><span class="sym">6.022×10²³ mol⁻¹</span> Avogadro's Number</button>
+          <button class="copy-chip" onclick="copyRich('1.602 × 10<sup>-19</sup> C', '1.602 x 10^-19 C', this)"><span class="sym">1.602×10⁻¹⁹ C</span> Elementary Charge (e)</button>
+        </div>
+        <h4>Energy Notations</h4>
+        <div class="copy-grid">
+          <button class="copy-chip" onclick="copyRich('KE = 1/2(mv<sup>2</sup>)', 'KE = 1/2(mv^2)', this)"><span class="sym">KE=½mv²</span> Kinetic Energy</button>
+          <button class="copy-chip" onclick="copyPlain('PE=mgh', this)"><span class="sym">PE=mgh</span> Potential Energy</button>
+          <button class="copy-chip" onclick="copyPlain('W=Fd', this)"><span class="sym">W=Fd</span> Work</button>
+        </div>
+      </section>
+
+      <!-- Section 3: Common Units Constant -->
+      <section class="notation-section" id="section-3">
+        <h2><span class="section-index">03</span> Common Units Constant</h2>
+        <div class="copy-grid">
+          <button class="copy-chip" onclick="copyRich('10<sup>12</sup>&nbsp;', '10^12', this)"><span class="sym">10¹²</span> Tera (T)</button>
+          <button class="copy-chip" onclick="copyRich('10<sup>9</sup>&nbsp;', '10^9', this)"><span class="sym">10⁹</span> Giga (G)</button>
+          <button class="copy-chip" onclick="copyRich('10<sup>6</sup>&nbsp;', '10^6', this)"><span class="sym">10⁶</span> Mega (M)</button>
+          <button class="copy-chip" onclick="copyRich('10<sup>3</sup>&nbsp;', '10^3', this)"><span class="sym">10³</span> Kilo (K)</button>
+          <button class="copy-chip" onclick="copyRich('10<sup>-3</sup>&nbsp;', '10^-3', this)"><span class="sym">10⁻³</span> Milli (m)</button>
+          <button class="copy-chip" onclick="copyRich('10<sup>-9</sup>&nbsp;', '10^-9', this)"><span class="sym">10⁻⁹</span> Nano (n)</button>
+          <button class="copy-chip" onclick="copyRich('10<sup>-12</sup>&nbsp;', '10^-12', this)"><span class="sym">10⁻¹²</span> Pico (p)</button>
+        </div>
+      </section>
+
+      <!-- Section 4: Electromagnetic Constants -->
+      <section class="notation-section" id="section-4">
+        <h2><span class="section-index">04</span> Electromagnetic Constants</h2>
+        <div class="copy-grid">
+          <button class="copy-chip" onclick="copyRich('μ<sub>0</sub>&nbsp;', 'mu_0', this)"><span class="sym">μ₀</span> Permeability Notation</button>
+          <button class="copy-chip" onclick="copyRich('ε<sub>0</sub>&nbsp;', 'epsilon_0', this)"><span class="sym">ε₀</span> Permittivity Notation</button>
+        </div>
+        <h4>Constants</h4>
+        <div class="copy-grid constants">
+          <button class="copy-chip" onclick="copyPlain('96485 C/mol', this)"><span class="sym">96485 C/mol</span> Faraday's Constant (F)</button>
+          <button class="copy-chip" onclick="copyRich('4π × 10<sup>-7</sup> N/A<sup>2</sup>&nbsp;', '4*pi x 10^-7 N/A^2', this)"><span class="sym">4π×10⁻⁷ N/A²</span> Permeability of Free Space</button>
+          <button class="copy-chip" onclick="copyRich('8.85 × 10<sup>-12</sup> F/m', '8.85 x 10^-12 F/m', this)"><span class="sym">8.85×10⁻¹² F/m</span> Permittivity of Free Space</button>
+        </div>
+      </section>
+
+      <!-- Section 5: Statistical Notations -->
+      <section class="notation-section" id="section-5">
+        <h2><span class="section-index">05</span> Statistical Notations</h2>
+        <div class="copy-grid">
+          <button class="copy-chip" onclick="copyPlain('μ', this)"><span class="sym">μ</span> Mean</button>
+          <button class="copy-chip" onclick="copyRich('σ<sup>2</sup>&nbsp;', 'sigma^2', this)"><span class="sym">σ²</span> Variance</button>
+          <button class="copy-chip" onclick="copyPlain('σ', this)"><span class="sym">σ</span> Standard Deviation</button>
+          <button class="copy-chip" onclick="copyPlain('P(A)', this)"><span class="sym">P(A)</span> Probability</button>
+          <button class="copy-chip" onclick="copyRich('Σx<sup>2</sup>&nbsp;', 'sum x^2', this)"><span class="sym">Σx²</span> Sum of Squares</button>
+          <button class="copy-chip" onclick="copyPlain('Z', this)"><span class="sym">Z</span> Z-Score</button>
+        </div>
+      </section>
+
+      <!-- Section 6: Molecular and Chemical Notations -->
+      <section class="notation-section" id="section-6">
+        <h2><span class="section-index">06</span> Molecular and Chemical Notations</h2>
+        <div class="copy-grid">
+          <button class="copy-chip" onclick="copyPlain('g/mol', this)"><span class="sym">g/mol</span> Molar Mass</button>
+          <button class="copy-chip" onclick="copyPlain('pH', this)"><span class="sym">pH</span> pH</button>
+          <button class="copy-chip" onclick="copyPlain('[A]', this)"><span class="sym">[A]</span> Concentration</button>
+          <button class="copy-chip" onclick="copyPlain('PV=nRT', this)"><span class="sym">PV=nRT</span> Ideal Gas Law</button>
+          <button class="copy-chip" onclick="copyRich('N<sub>A</sub>&nbsp;', 'N_A', this)"><span class="sym">N_A</span> Avogadro Notation</button>
+          <button class="copy-chip" onclick="copyRich('k<sub>B</sub>&nbsp;', 'k_B', this)"><span class="sym">k_B</span> Boltzmann Notation</button>
+          <button class="copy-chip" onclick="copyRich('m<sub>e</sub>&nbsp;', 'm_e', this)"><span class="sym">m_e</span> Mass of e⁻</button>
+          <button class="copy-chip" onclick="copyRich('m<sub>p</sub>&nbsp;', 'm_p', this)"><span class="sym">m_p</span> Mass of [H⁺]</button>
+        </div>
+        <h4>Molecular and Chemical Constants</h4>
+        <div class="copy-grid constants">
+          <button class="copy-chip" onclick="copyRich('6.022 × 10<sup>23</sup> mol<sup>-1</sup>&nbsp;', '6.022 x 10^23 mol^-1', this)"><span class="sym">6.022×10²³ mol⁻¹</span> Avogadro's Number</button>
+          <button class="copy-chip" onclick="copyRich('1.602 × 10<sup>-19</sup> C', '1.602 x 10^-19 C', this)"><span class="sym">1.602×10⁻¹⁹ C</span> Elementary Charge (e)</button>
+          <button class="copy-chip" onclick="copyRich('8.314 J mol<sup>-1</sup> K<sup>-1</sup>&nbsp;', '8.314 J mol^-1 K^-1', this)"><span class="sym">8.314 J/(mol·K)</span> Universal Gas Constant (R)</button>
+          <button class="copy-chip" onclick="copyRich('1.38 × 10<sup>-23</sup> J/K', '1.38 x 10^-23 J/K', this)"><span class="sym">1.38×10⁻²³ J/K</span> Boltzmann Constant</button>
+          <button class="copy-chip" onclick="copyRich('9.109 × 10<sup>-31</sup> kg', '9.109 x 10^-31 kg', this)"><span class="sym">9.109×10⁻³¹ kg</span> Mass of electron</button>
+          <button class="copy-chip" onclick="copyRich('1.673 × 10<sup>-27</sup> kg', '1.673 x 10^-27 kg', this)"><span class="sym">1.673×10⁻²⁷ kg</span> Mass of proton</button>
+        </div>
+      </section>
+
+      <!-- Section 7: Probability and Statistics Notations -->
+      <section class="notation-section" id="section-7">
+        <h2><span class="section-index">07</span> Probability and Statistics Notations</h2>
+        <div class="copy-grid">
+          <button class="copy-chip" onclick="copyPlain('P(A ∩ B)', this)"><span class="sym">P(A∩B)</span> Intersection</button>
+          <button class="copy-chip" onclick="copyPlain('P(A ∪ B)', this)"><span class="sym">P(A∪B)</span> Union</button>
+          <button class="copy-chip" onclick="copyPlain('P(A|B)', this)"><span class="sym">P(A|B)</span> Conditional Probability</button>
+        </div>
+      </section>
+
+      <!-- Section 8: Quantum Mechanics Notations -->
+      <section class="notation-section" id="section-8">
+        <h2><span class="section-index">08</span> Quantum Mechanics Notations</h2>
+        <div class="copy-grid">
+          <button class="copy-chip" onclick="copyPlain('λ', this)"><span class="sym">λ</span> Wavelength</button>
+          <button class="copy-chip" onclick="copyPlain('ħ', this)"><span class="sym">ħ</span> Reduced Planck Constant</button>
+          <button class="copy-chip" onclick="copyPlain('ψ', this)"><span class="sym">ψ</span> Wave Function</button>
+          <button class="copy-chip" onclick="copyPlain('ΔE', this)"><span class="sym">ΔE</span> Energy Difference</button>
+        </div>
+      </section>
+
+      <!-- Section 9: Thermodynamics Notations -->
+      <section class="notation-section" id="section-9">
+        <h2><span class="section-index">09</span> Thermodynamics Notations</h2>
+        <div class="copy-grid">
+          <button class="copy-chip" onclick="copyPlain('ΔS', this)"><span class="sym">ΔS</span> Entropy Change</button>
+          <button class="copy-chip" onclick="copyPlain('ΔH', this)"><span class="sym">ΔH</span> Enthalpy Change</button>
+          <button class="copy-chip" onclick="copyPlain('ΔG', this)"><span class="sym">ΔG</span> Gibbs Free Energy</button>
+          <button class="copy-chip" onclick="copyPlain('ΔU=Q-W', this)"><span class="sym">ΔU=Q-W</span> First Law</button>
+          <button class="copy-chip" onclick="copyPlain('°F', this)"><span class="sym">°F</span> Fahrenheit</button>
+          <button class="copy-chip" onclick="copyPlain('°C', this)"><span class="sym">°C</span> Celsius</button>
+          <button class="copy-chip" onclick="copyPlain('°K', this)"><span class="sym">°K</span> Kelvin</button>
+        </div>
+      </section>
+
+      <!-- Section 10: Special Relativity Notations -->
+      <section class="notation-section" id="section-10">
+        <h2><span class="section-index">10</span> Special Relativity Notations</h2>
+        <div class="copy-grid">
+          <button class="copy-chip" onclick="copyPlain('E=mc²', this)"><span class="sym">E=mc²</span> Energy-Mass Equivalence</button>
+          <button class="copy-chip" onclick="copyPlain('γ', this)"><span class="sym">γ</span> Lorentz Factor</button>
+        </div>
+      </section>
+
+      <!-- Section 11: General Relativity Notations -->
+      <section class="notation-section" id="section-11">
+        <h2><span class="section-index">11</span> General Relativity Notations</h2>
+        <div class="copy-grid">
+          <button class="copy-chip" onclick="copyPlain('Gμν', this)"><span class="sym">Gμν</span> Einstein Tensor</button>
+          <button class="copy-chip" onclick="copyPlain('Rμν', this)"><span class="sym">Rμν</span> Ricci Curvature Tensor</button>
+        </div>
+      </section>
+
+      <!-- Section 12: Astrophysics Notations -->
+      <section class="notation-section" id="section-12">
+        <h2><span class="section-index">12</span> Astrophysics Notations</h2>
+        <div class="copy-grid">
+          <button class="copy-chip" onclick="copyPlain('H₀', this)"><span class="sym">H₀</span> Hubble</button>
+          <button class="copy-chip" onclick="copyPlain('Ω', this)"><span class="sym">Ω</span> Density Parameter</button>
+          <button class="copy-chip" onclick="copyRich('M<sub>⊙</sub>&nbsp;', 'M_sun', this)"><span class="sym">M⊙</span> Solar Mass Notation</button>
+        </div>
+        <h4>Astrophysics Constants</h4>
+        <div class="copy-grid constants">
+          <button class="copy-chip" onclick="copyPlain('69.8 km/s/Mpc', this)"><span class="sym">69.8 km/s/Mpc</span> Hubble Constant</button>
+          <button class="copy-chip" onclick="copyRich('1.496 × 10<sup>8</sup> km', '1.496 x 10^8 km', this)"><span class="sym">1.496×10⁸ km</span> Astronomical Unit (1AU)</button>
+          <button class="copy-chip" onclick="copyRich('3.086 × 10<sup>16</sup> m', '3.086 x 10^16 m', this)"><span class="sym">3.086×10¹⁶ m</span> Parsec (pc)</button>
+          <button class="copy-chip" onclick="copyRich('9.461 × 10<sup>15</sup> m', '9.461 x 10^15 m', this)"><span class="sym">9.461×10¹⁵ m</span> Light Year (ly)</button>
+          <button class="copy-chip" onclick="copyRich('1.989 × 10<sup>30</sup> kg', '1.989 x 10^30 kg', this)"><span class="sym">1.989×10³⁰ kg</span> Solar Mass</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2024–2026 Oanh Sonny Tran. All rights reserved. · <a href="mailto:otxtra1234@gmail.com">Contact Me</a>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
