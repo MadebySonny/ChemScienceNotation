@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/30773429/README.md) 
 # ScienceNotations
 
 A copy-paste library of mathematical, physics, and chemistry notations and constants for STEM
@@ -109,3 +108,4 @@ built in for the full list (mislabeled units on Light Year, Solar Mass, and elec
 a couple of stray characters in copied values; a malformed HTML tag). No numeric values were
 changed, only unit labels, copy-value typos, and one label that didn't match its actual copied
 value (Pico).
+
