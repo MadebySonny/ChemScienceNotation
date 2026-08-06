@@ -13,6 +13,7 @@ No build step, no dependencies — just static HTML, CSS, and vanilla JS.
 .
 ├── index.html            # main notations page (12 sections)
 ├── greek-alphabet.html   # Greek alphabet (uppercase + lowercase)
+├── reactions.html        # chemical reactions (Double/single replacements, acid/base, etc...) 
 ├── styles.css            # shared stylesheet (ChemBench design tokens)
 └── script.js             # shared copy-to-clipboard + toast logic
 ```
