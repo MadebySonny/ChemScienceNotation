@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reactions — ScienceNotations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <h1><span class="glyph">π</span> ScienceNotations</h1>
+      <span class="eyebrow">copy-paste notation & constants library</span>
+    </div>
+    <a class="badge" href="https://o-tran.github.io/chembench/" target="_blank" rel="noopener">chembench companion</a>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-link" href="index.html">Notations</a>
+    <a class="nav-link" href="greek-alphabet.html">Greek Alphabet</a>
+    <a class="nav-link active" href="reactions.html">Reactions</a>
+    <a class="nav-link external" href="https://o-tran.github.io/chembench/" target="_blank" rel="noopener">ChemBench ↗</a>
+  </div>
+</nav>
+
+<main>
+  <div class="hero">
+    <h2>A quick-copy library of common chemical reactions</h2>
+    <p>Click any equation to copy it — subscripts and reaction arrows (→ forward, ⇌ equilibrium) paste correctly into Word and Google Docs, not as raw text.</p>
+    <ol>
+      <li>Find your reaction type, either by scrolling or using the contents list on the left.</li>
+      <li>Click an equation to copy it.</li>
+      <li>Paste directly into your lab report or notes.</li>
+    </ol>
+  </div>
+
+  <div class="workbench">
+    <nav class="toc" aria-label="Table of contents">
+      <span class="toc-label">Jump to</span>
+      <ul>
+        <li><a href="#rx-acid-base">01. Acid–Base (Neutralization)</a></li>
+        <li><a href="#rx-combustion">02. Combustion</a></li>
+        <li><a href="#rx-synthesis">03. Synthesis (Combination)</a></li>
+        <li><a href="#rx-decomposition">04. Decomposition</a></li>
+        <li><a href="#rx-single-displacement">05. Single Displacement</a></li>
+        <li><a href="#rx-double-displacement">06. Double Displacement (Precipitation)</a></li>
+        <li><a href="#rx-redox">07. Redox (Oxidation–Reduction)</a></li>
+        <li><a href="#rx-equilibrium">08. Equilibrium Reactions</a></li>
+      </ul>
+    </nav>
+
+    <div class="sections">
+
+      <section class="notation-section" id="rx-acid-base">
+        <h2><span class="section-index">01</span> Acid–Base (Neutralization)</h2>
+        <div class="copy-grid reaction-grid">
+          <button class="copy-chip reaction-chip" onclick="copyRich('HCl + NaOH → NaCl + H<sub>2</sub>O&nbsp;', 'HCl + NaOH → NaCl + H2O', this)"><span class="sym">HCl + NaOH → NaCl + H₂O</span><span class="rx-label">Strong acid + strong base</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('H<sub>2</sub>SO<sub>4</sub> + 2NaOH → Na<sub>2</sub>SO<sub>4</sub> + 2H<sub>2</sub>O&nbsp;', 'H2SO4 + 2NaOH → Na2SO4 + 2H2O', this)"><span class="sym">H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O</span><span class="rx-label">Sulfuric acid neutralization</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('HNO<sub>3</sub> + KOH → KNO<sub>3</sub> + H<sub>2</sub>O&nbsp;', 'HNO3 + KOH → KNO3 + H2O', this)"><span class="sym">HNO₃ + KOH → KNO₃ + H₂O</span><span class="rx-label">Nitric acid + potassium hydroxide</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('CH<sub>3</sub>COOH + NaOH → CH<sub>3</sub>COONa + H<sub>2</sub>O&nbsp;', 'CH3COOH + NaOH → CH3COONa + H2O', this)"><span class="sym">CH₃COOH + NaOH → CH₃COONa + H₂O</span><span class="rx-label">Acetic acid + sodium hydroxide</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2HCl + Ca(OH)<sub>2</sub> → CaCl<sub>2</sub> + 2H<sub>2</sub>O&nbsp;', '2HCl + Ca(OH)2 → CaCl2 + 2H2O', this)"><span class="sym">2HCl + Ca(OH)₂ → CaCl₂ + 2H₂O</span><span class="rx-label">Hydrochloric acid + calcium hydroxide</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('H<sub>3</sub>PO<sub>4</sub> + 3NaOH → Na<sub>3</sub>PO<sub>4</sub> + 3H<sub>2</sub>O&nbsp;', 'H3PO4 + 3NaOH → Na3PO4 + 3H2O', this)"><span class="sym">H₃PO₄ + 3NaOH → Na₃PO₄ + 3H₂O</span><span class="rx-label">Phosphoric acid neutralization</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('HCl + NH<sub>3</sub> → NH<sub>4</sub>Cl&nbsp;', 'HCl + NH3 → NH4Cl', this)"><span class="sym">HCl + NH₃ → NH₄Cl</span><span class="rx-label">Acid + weak base (gas)</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('HBr + KOH → KBr + H<sub>2</sub>O&nbsp;', 'HBr + KOH → KBr + H2O', this)"><span class="sym">HBr + KOH → KBr + H₂O</span><span class="rx-label">Hydrobromic acid + potassium hydroxide</span></button>
+        </div>
+      </section>
+
+      <section class="notation-section" id="rx-combustion">
+        <h2><span class="section-index">02</span> Combustion</h2>
+        <div class="copy-grid reaction-grid">
+          <button class="copy-chip reaction-chip" onclick="copyRich('CH<sub>4</sub> + 2O<sub>2</sub> → CO<sub>2</sub> + 2H<sub>2</sub>O&nbsp;', 'CH4 + 2O2 → CO2 + 2H2O', this)"><span class="sym">CH₄ + 2O₂ → CO₂ + 2H₂O</span><span class="rx-label">Methane combustion</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('C<sub>3</sub>H<sub>8</sub> + 5O<sub>2</sub> → 3CO<sub>2</sub> + 4H<sub>2</sub>O&nbsp;', 'C3H8 + 5O2 → 3CO2 + 4H2O', this)"><span class="sym">C₃H₈ + 5O₂ → 3CO₂ + 4H₂O</span><span class="rx-label">Propane combustion</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2C<sub>2</sub>H<sub>6</sub> + 7O<sub>2</sub> → 4CO<sub>2</sub> + 6H<sub>2</sub>O&nbsp;', '2C2H6 + 7O2 → 4CO2 + 6H2O', this)"><span class="sym">2C₂H₆ + 7O₂ → 4CO₂ + 6H₂O</span><span class="rx-label">Ethane combustion</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> → 6CO<sub>2</sub> + 6H<sub>2</sub>O&nbsp;', 'C6H12O6 + 6O2 → 6CO2 + 6H2O', this)"><span class="sym">C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O</span><span class="rx-label">Glucose combustion (respiration)</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O&nbsp;', '2H2 + O2 → 2H2O', this)"><span class="sym">2H₂ + O₂ → 2H₂O</span><span class="rx-label">Hydrogen combustion</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('C<sub>2</sub>H<sub>5</sub>OH + 3O<sub>2</sub> → 2CO<sub>2</sub> + 3H<sub>2</sub>O&nbsp;', 'C2H5OH + 3O2 → 2CO2 + 3H2O', this)"><span class="sym">C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O</span><span class="rx-label">Ethanol combustion</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2C<sub>8</sub>H<sub>18</sub> + 25O<sub>2</sub> → 16CO<sub>2</sub> + 18H<sub>2</sub>O&nbsp;', '2C8H18 + 25O2 → 16CO2 + 18H2O', this)"><span class="sym">2C₈H₁₈ + 25O₂ → 16CO₂ + 18H₂O</span><span class="rx-label">Octane (gasoline) combustion</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2CH<sub>3</sub>OH + 3O<sub>2</sub> → 2CO<sub>2</sub> + 4H<sub>2</sub>O&nbsp;', '2CH3OH + 3O2 → 2CO2 + 4H2O', this)"><span class="sym">2CH₃OH + 3O₂ → 2CO₂ + 4H₂O</span><span class="rx-label">Methanol combustion</span></button>
+        </div>
+      </section>
+
+      <section class="notation-section" id="rx-synthesis">
+        <h2><span class="section-index">03</span> Synthesis (Combination)</h2>
+        <div class="copy-grid reaction-grid">
+          <button class="copy-chip reaction-chip" onclick="copyRich('2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O&nbsp;', '2H2 + O2 → 2H2O', this)"><span class="sym">2H₂ + O₂ → 2H₂O</span><span class="rx-label">Hydrogen + oxygen</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('N<sub>2</sub> + 3H<sub>2</sub> → 2NH<sub>3</sub>&nbsp;', 'N2 + 3H2 → 2NH3', this)"><span class="sym">N₂ + 3H₂ → 2NH₃</span><span class="rx-label">Haber process (ammonia)</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2Na + Cl<sub>2</sub> → 2NaCl&nbsp;', '2Na + Cl2 → 2NaCl', this)"><span class="sym">2Na + Cl₂ → 2NaCl</span><span class="rx-label">Sodium + chlorine</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('C + O<sub>2</sub> → CO<sub>2</sub>&nbsp;', 'C + O2 → CO2', this)"><span class="sym">C + O₂ → CO₂</span><span class="rx-label">Carbon + oxygen</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2Mg + O<sub>2</sub> → 2MgO&nbsp;', '2Mg + O2 → 2MgO', this)"><span class="sym">2Mg + O₂ → 2MgO</span><span class="rx-label">Magnesium + oxygen</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('S + O<sub>2</sub> → SO<sub>2</sub>&nbsp;', 'S + O2 → SO2', this)"><span class="sym">S + O₂ → SO₂</span><span class="rx-label">Sulfur + oxygen</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('CaO + H<sub>2</sub>O → Ca(OH)<sub>2</sub>&nbsp;', 'CaO + H2O → Ca(OH)2', this)"><span class="sym">CaO + H₂O → Ca(OH)₂</span><span class="rx-label">Quicklime + water (slaking)</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('SO<sub>3</sub> + H<sub>2</sub>O → H<sub>2</sub>SO<sub>4</sub>&nbsp;', 'SO3 + H2O → H2SO4', this)"><span class="sym">SO₃ + H₂O → H₂SO₄</span><span class="rx-label">Sulfur trioxide + water</span></button>
+        </div>
+      </section>
+
+      <section class="notation-section" id="rx-decomposition">
+        <h2><span class="section-index">04</span> Decomposition</h2>
+        <div class="copy-grid reaction-grid">
+          <button class="copy-chip reaction-chip" onclick="copyRich('2H<sub>2</sub>O<sub>2</sub> → 2H<sub>2</sub>O + O<sub>2</sub>&nbsp;', '2H2O2 → 2H2O + O2', this)"><span class="sym">2H₂O₂ → 2H₂O + O₂</span><span class="rx-label">Hydrogen peroxide decomposition</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2KClO<sub>3</sub> → 2KCl + 3O<sub>2</sub>&nbsp;', '2KClO3 → 2KCl + 3O2', this)"><span class="sym">2KClO₃ → 2KCl + 3O₂</span><span class="rx-label">Potassium chlorate decomposition</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('CaCO<sub>3</sub> → CaO + CO<sub>2</sub>&nbsp;', 'CaCO3 → CaO + CO2', this)"><span class="sym">CaCO₃ → CaO + CO₂</span><span class="rx-label">Calcium carbonate (thermal)</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2NaHCO<sub>3</sub> → Na<sub>2</sub>CO<sub>3</sub> + H<sub>2</sub>O + CO<sub>2</sub>&nbsp;', '2NaHCO3 → Na2CO3 + H2O + CO2', this)"><span class="sym">2NaHCO₃ → Na₂CO₃ + H₂O + CO₂</span><span class="rx-label">Baking soda decomposition</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2H<sub>2</sub>O → 2H<sub>2</sub> + O<sub>2</sub>&nbsp;', '2H2O → 2H2 + O2', this)"><span class="sym">2H₂O → 2H₂ + O₂</span><span class="rx-label">Electrolysis of water</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('NH<sub>4</sub>NO<sub>3</sub> → N<sub>2</sub>O + 2H<sub>2</sub>O&nbsp;', 'NH4NO3 → N2O + 2H2O', this)"><span class="sym">NH₄NO₃ → N₂O + 2H₂O</span><span class="rx-label">Ammonium nitrate decomposition</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2HgO → 2Hg + O<sub>2</sub>&nbsp;', '2HgO → 2Hg + O2', this)"><span class="sym">2HgO → 2Hg + O₂</span><span class="rx-label">Mercury(II) oxide decomposition</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2Ag<sub>2</sub>O → 4Ag + O<sub>2</sub>&nbsp;', '2Ag2O → 4Ag + O2', this)"><span class="sym">2Ag₂O → 4Ag + O₂</span><span class="rx-label">Silver oxide decomposition</span></button>
+        </div>
+      </section>
+
+      <section class="notation-section" id="rx-single-displacement">
+        <h2><span class="section-index">05</span> Single Displacement</h2>
+        <div class="copy-grid reaction-grid">
+          <button class="copy-chip reaction-chip" onclick="copyRich('Zn + 2HCl → ZnCl<sub>2</sub> + H<sub>2</sub>&nbsp;', 'Zn + 2HCl → ZnCl2 + H2', this)"><span class="sym">Zn + 2HCl → ZnCl₂ + H₂</span><span class="rx-label">Zinc + hydrochloric acid</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('Fe + CuSO<sub>4</sub> → FeSO<sub>4</sub> + Cu&nbsp;', 'Fe + CuSO4 → FeSO4 + Cu', this)"><span class="sym">Fe + CuSO₄ → FeSO₄ + Cu</span><span class="rx-label">Iron displaces copper</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('Mg + 2HCl → MgCl<sub>2</sub> + H<sub>2</sub>&nbsp;', 'Mg + 2HCl → MgCl2 + H2', this)"><span class="sym">Mg + 2HCl → MgCl₂ + H₂</span><span class="rx-label">Magnesium + hydrochloric acid</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2Al + 3CuCl<sub>2</sub> → 2AlCl<sub>3</sub> + 3Cu&nbsp;', '2Al + 3CuCl2 → 2AlCl3 + 3Cu', this)"><span class="sym">2Al + 3CuCl₂ → 2AlCl₃ + 3Cu</span><span class="rx-label">Aluminum displaces copper</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('Zn + CuSO<sub>4</sub> → ZnSO<sub>4</sub> + Cu&nbsp;', 'Zn + CuSO4 → ZnSO4 + Cu', this)"><span class="sym">Zn + CuSO₄ → ZnSO₄ + Cu</span><span class="rx-label">Zinc displaces copper</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('Cl<sub>2</sub> + 2KBr → 2KCl + Br<sub>2</sub>&nbsp;', 'Cl2 + 2KBr → 2KCl + Br2', this)"><span class="sym">Cl₂ + 2KBr → 2KCl + Br₂</span><span class="rx-label">Halogen displacement</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('Cu + 2AgNO<sub>3</sub> → Cu(NO<sub>3</sub>)<sub>2</sub> + 2Ag&nbsp;', 'Cu + 2AgNO3 → Cu(NO3)2 + 2Ag', this)"><span class="sym">Cu + 2AgNO₃ → Cu(NO₃)₂ + 2Ag</span><span class="rx-label">Copper displaces silver</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('Fe + 2HCl → FeCl<sub>2</sub> + H<sub>2</sub>&nbsp;', 'Fe + 2HCl → FeCl2 + H2', this)"><span class="sym">Fe + 2HCl → FeCl₂ + H₂</span><span class="rx-label">Iron + hydrochloric acid</span></button>
+        </div>
+      </section>
+
+      <section class="notation-section" id="rx-double-displacement">
+        <h2><span class="section-index">06</span> Double Displacement (Precipitation)</h2>
+        <div class="copy-grid reaction-grid">
+          <button class="copy-chip reaction-chip" onclick="copyRich('AgNO<sub>3</sub> + NaCl → AgCl↓ + NaNO<sub>3</sub>&nbsp;', 'AgNO3 + NaCl → AgCl↓ + NaNO3', this)"><span class="sym">AgNO₃ + NaCl → AgCl↓ + NaNO₃</span><span class="rx-label">Silver chloride precipitate</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('Pb(NO<sub>3</sub>)<sub>2</sub> + 2KI → PbI<sub>2</sub>↓ + 2KNO<sub>3</sub>&nbsp;', 'Pb(NO3)2 + 2KI → PbI2↓ + 2KNO3', this)"><span class="sym">Pb(NO₃)₂ + 2KI → PbI₂↓ + 2KNO₃</span><span class="rx-label">Lead iodide precipitate</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('BaCl<sub>2</sub> + Na<sub>2</sub>SO<sub>4</sub> → BaSO<sub>4</sub>↓ + 2NaCl&nbsp;', 'BaCl2 + Na2SO4 → BaSO4↓ + 2NaCl', this)"><span class="sym">BaCl₂ + Na₂SO₄ → BaSO₄↓ + 2NaCl</span><span class="rx-label">Barium sulfate precipitate</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('CaCl<sub>2</sub> + Na<sub>2</sub>CO<sub>3</sub> → CaCO<sub>3</sub>↓ + 2NaCl&nbsp;', 'CaCl2 + Na2CO3 → CaCO3↓ + 2NaCl', this)"><span class="sym">CaCl₂ + Na₂CO₃ → CaCO₃↓ + 2NaCl</span><span class="rx-label">Calcium carbonate precipitate</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('Pb(NO<sub>3</sub>)<sub>2</sub> + 2NaCl → PbCl<sub>2</sub>↓ + 2NaNO<sub>3</sub>&nbsp;', 'Pb(NO3)2 + 2NaCl → PbCl2↓ + 2NaNO3', this)"><span class="sym">Pb(NO₃)₂ + 2NaCl → PbCl₂↓ + 2NaNO₃</span><span class="rx-label">Lead chloride precipitate</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('AgNO<sub>3</sub> + KBr → AgBr↓ + KNO<sub>3</sub>&nbsp;', 'AgNO3 + KBr → AgBr↓ + KNO3', this)"><span class="sym">AgNO₃ + KBr → AgBr↓ + KNO₃</span><span class="rx-label">Silver bromide precipitate</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('FeCl<sub>3</sub> + 3NaOH → Fe(OH)<sub>3</sub>↓ + 3NaCl&nbsp;', 'FeCl3 + 3NaOH → Fe(OH)3↓ + 3NaCl', this)"><span class="sym">FeCl₃ + 3NaOH → Fe(OH)₃↓ + 3NaCl</span><span class="rx-label">Iron(III) hydroxide precipitate</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('CuSO<sub>4</sub> + 2NaOH → Cu(OH)<sub>2</sub>↓ + Na<sub>2</sub>SO<sub>4</sub>&nbsp;', 'CuSO4 + 2NaOH → Cu(OH)2↓ + Na2SO4', this)"><span class="sym">CuSO₄ + 2NaOH → Cu(OH)₂↓ + Na₂SO₄</span><span class="rx-label">Copper(II) hydroxide precipitate</span></button>
+        </div>
+      </section>
+
+      <section class="notation-section" id="rx-redox">
+        <h2><span class="section-index">07</span> Redox (Oxidation–Reduction)</h2>
+        <div class="copy-grid reaction-grid">
+          <button class="copy-chip reaction-chip" onclick="copyRich('2Fe<sup>2+</sup> + Cl<sub>2</sub> → 2Fe<sup>3+</sup> + 2Cl<sup>-</sup>&nbsp;', '2Fe2+ + Cl2 → 2Fe3+ + 2Cl-', this)"><span class="sym">2Fe²⁺ + Cl₂ → 2Fe³⁺ + 2Cl⁻</span><span class="rx-label">Iron(II) oxidized by chlorine</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('Zn + Cu<sup>2+</sup> → Zn<sup>2+</sup> + Cu&nbsp;', 'Zn + Cu2+ → Zn2+ + Cu', this)"><span class="sym">Zn + Cu²⁺ → Zn²⁺ + Cu</span><span class="rx-label">Zinc reduces copper ion</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('MnO<sub>4</sub><sup>-</sup> + 5Fe<sup>2+</sup> + 8H<sup>+</sup> → Mn<sup>2+</sup> + 5Fe<sup>3+</sup> + 4H<sub>2</sub>O&nbsp;', 'MnO4- + 5Fe2+ + 8H+ → Mn2+ + 5Fe3+ + 4H2O', this)"><span class="sym">MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O</span><span class="rx-label">Permanganate titration (acidic)</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('Cr<sub>2</sub>O<sub>7</sub><sup>2-</sup> + 6Fe<sup>2+</sup> + 14H<sup>+</sup> → 2Cr<sup>3+</sup> + 6Fe<sup>3+</sup> + 7H<sub>2</sub>O&nbsp;', 'Cr2O72- + 6Fe2+ + 14H+ → 2Cr3+ + 6Fe3+ + 7H2O', this)"><span class="sym">Cr₂O₇²⁻ + 6Fe²⁺ + 14H⁺ → 2Cr³⁺ + 6Fe³⁺ + 7H₂O</span><span class="rx-label">Dichromate titration (acidic)</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2KMnO<sub>4</sub> + 16HCl → 2KCl + 2MnCl<sub>2</sub> + 5Cl<sub>2</sub> + 8H<sub>2</sub>O&nbsp;', '2KMnO4 + 16HCl → 2KCl + 2MnCl2 + 5Cl2 + 8H2O', this)"><span class="sym">2KMnO₄ + 16HCl → 2KCl + 2MnCl₂ + 5Cl₂ + 8H₂O</span><span class="rx-label">Permanganate + hydrochloric acid</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2Na + 2H<sub>2</sub>O → 2NaOH + H<sub>2</sub>&nbsp;', '2Na + 2H2O → 2NaOH + H2', this)"><span class="sym">2Na + 2H₂O → 2NaOH + H₂</span><span class="rx-label">Sodium + water</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2Al + Fe<sub>2</sub>O<sub>3</sub> → Al<sub>2</sub>O<sub>3</sub> + 2Fe&nbsp;', '2Al + Fe2O3 → Al2O3 + 2Fe', this)"><span class="sym">2Al + Fe₂O₃ → Al₂O₃ + 2Fe</span><span class="rx-label">Thermite reaction</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('H<sub>2</sub>O<sub>2</sub> + 2I<sup>-</sup> + 2H<sup>+</sup> → I<sub>2</sub> + 2H<sub>2</sub>O&nbsp;', 'H2O2 + 2I- + 2H+ → I2 + 2H2O', this)"><span class="sym">H₂O₂ + 2I⁻ + 2H⁺ → I₂ + 2H₂O</span><span class="rx-label">Peroxide + iodide (acidic)</span></button>
+        </div>
+      </section>
+
+      <section class="notation-section" id="rx-equilibrium">
+        <h2><span class="section-index">08</span> Equilibrium Reactions</h2>
+        <div class="copy-grid reaction-grid">
+          <button class="copy-chip reaction-chip" onclick="copyRich('N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub>&nbsp;', 'N2 + 3H2 ⇌ 2NH3', this)"><span class="sym">N₂ + 3H₂ ⇌ 2NH₃</span><span class="rx-label">Ammonia synthesis equilibrium</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('2SO<sub>2</sub> + O<sub>2</sub> ⇌ 2SO<sub>3</sub>&nbsp;', '2SO2 + O2 ⇌ 2SO3', this)"><span class="sym">2SO₂ + O₂ ⇌ 2SO₃</span><span class="rx-label">Sulfur trioxide equilibrium (Contact process)</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('N<sub>2</sub>O<sub>4</sub> ⇌ 2NO<sub>2</sub>&nbsp;', 'N2O4 ⇌ 2NO2', this)"><span class="sym">N₂O₄ ⇌ 2NO₂</span><span class="rx-label">Dinitrogen tetroxide / nitrogen dioxide</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('H<sub>2</sub> + I<sub>2</sub> ⇌ 2HI&nbsp;', 'H2 + I2 ⇌ 2HI', this)"><span class="sym">H₂ + I₂ ⇌ 2HI</span><span class="rx-label">Hydrogen iodide equilibrium</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('CO + H<sub>2</sub>O ⇌ CO<sub>2</sub> + H<sub>2</sub>&nbsp;', 'CO + H2O ⇌ CO2 + H2', this)"><span class="sym">CO + H₂O ⇌ CO₂ + H₂</span><span class="rx-label">Water-gas shift reaction</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('PCl<sub>5</sub> ⇌ PCl<sub>3</sub> + Cl<sub>2</sub>&nbsp;', 'PCl5 ⇌ PCl3 + Cl2', this)"><span class="sym">PCl₅ ⇌ PCl₃ + Cl₂</span><span class="rx-label">Phosphorus pentachloride dissociation</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('CH<sub>3</sub>COOH ⇌ CH<sub>3</sub>COO<sup>-</sup> + H<sup>+</sup>&nbsp;', 'CH3COOH ⇌ CH3COO- + H+', this)"><span class="sym">CH₃COOH ⇌ CH₃COO⁻ + H⁺</span><span class="rx-label">Acetic acid dissociation</span></button>
+          <button class="copy-chip reaction-chip" onclick="copyRich('NH<sub>3</sub> + H<sub>2</sub>O ⇌ NH<sub>4</sub><sup>+</sup> + OH<sup>-</sup>&nbsp;', 'NH3 + H2O ⇌ NH4+ + OH-', this)"><span class="sym">NH₃ + H₂O ⇌ NH₄⁺ + OH⁻</span><span class="rx-label">Ammonia in water</span></button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2024–2026 Oanh Sonny Tran. All rights reserved. · <a href="mailto:otxtra1234@gmail.com">Contact Me</a>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
