@@ -23,6 +23,7 @@ No build step, no dependencies — just static HTML, CSS, and vanilla JS.
 No install needed. Either:
 
 - Open `index.html` directly in a browser, or
+- Go to the GitHub-hosted page: [Chem Science Notation](https://madebysonny.github.io/ChemScienceNotation/index.html)
 - Serve the folder so relative paths and the clipboard API behave exactly like production:
   ```
   npx serve .
