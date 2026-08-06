@@ -1,7 +1,8 @@
+[README.md](https://github.com/user-attachments/files/30773429/README.md) 
 # ScienceNotations
 
 A copy-paste library of mathematical, physics, and chemistry notations and constants for STEM
-lab reports restyled to match the [ChemBench](https://o-tran.github.io/chembench/) theme.
+lab reports — restyled to match the [ChemBench](https://o-tran.github.io/chembench/) theme.
 Click any button to copy it; formatted notations (exponents, subscripts) paste correctly into
 Word and Google Docs instead of as raw text.
 
@@ -13,7 +14,7 @@ No build step, no dependencies — just static HTML, CSS, and vanilla JS.
 .
 ├── index.html            # main notations page (12 sections)
 ├── greek-alphabet.html   # Greek alphabet (uppercase + lowercase)
-├── reactions.html        # chemical reactions (Double/single replacements, acid/base, etc...) 
+├── reactions.html        # copy-paste chemical reactions (8 categories, 64 equations)
 ├── styles.css            # shared stylesheet (ChemBench design tokens)
 └── script.js             # shared copy-to-clipboard + toast logic
 ```
@@ -22,8 +23,7 @@ No build step, no dependencies — just static HTML, CSS, and vanilla JS.
 
 No install needed. Either:
 
-- Open `index.html` directly in a browser
-- Go to the GitHub-hosted page: [Chem Science Notation](https://madebysonny.github.io/ChemScienceNotation/index.html)
+- Open `index.html` directly in a browser, or
 - Serve the folder so relative paths and the clipboard API behave exactly like production:
   ```
   npx serve .
@@ -71,9 +71,38 @@ To add a whole new section, copy an existing `<section class="notation-section" 
 block and add a matching entry to the `<nav class="toc">` list at the top of `index.html` — the
 scroll-spy highlighting in `script.js` picks up any section with an `id` automatically.
 
-## Content notes
+## Adding a new reaction (reactions.html)
 
-Original Version: [Science notation](https://o-tran.github.io/ScienceNotations/)
+`reactions.html` follows the same page skeleton (header, nav, hero, `.toc` + `.sections`
+workbench) as `index.html`, but each `<section class="notation-section">` groups reactions by
+type (Acid–Base, Combustion, Synthesis, Decomposition, Single/Double Displacement, Redox,
+Equilibrium) inside a `.copy-grid.reaction-grid` instead of `.copy-grid`. Every reaction is a
+`copyRich()` chip so subscripts and charges paste into Word/Docs as real formatting, with an
+`.rx-label` caption underneath naming the reaction:
+
+```html
+<button class="copy-chip reaction-chip"
+        onclick="copyRich('HCl + NaOH &rarr; NaCl + H<sub>2</sub>O&nbsp;', 'HCl + NaOH → NaCl + H2O', this)">
+  <span class="sym">HCl + NaOH → NaCl + H₂O</span>
+  <span class="rx-label">Strong acid + strong base</span>
+</button>
+```
+
+Notes on the pattern:
+- Use real `<sub>N</sub>` tags around subscript numbers in the copied HTML, and matching unicode
+  subscript digits (₀–₉) in the visible `.sym` label so it reads correctly on the page too.
+- Charges use `<sup>` in the HTML and unicode superscripts (⁺ ⁻ ⁰–⁹) in the `.sym` label, e.g.
+  `Fe<sup>3+</sup>` → `Fe³⁺`.
+- Reaction arrows don't need markup — just the unicode character: `→` for one-way reactions, `⇌`
+  for equilibrium.
+- Precipitates get a trailing `↓` right after the formula (e.g. `AgCl↓`).
+- To add a new category, copy a whole `<section id="rx-...">` block, add a matching `<li>` to the
+  `.toc` list, and give the section a unique `rx-` id — scroll-spy picks it up automatically, same
+  as `index.html`.
+- `reactions.html` is linked from the shared nav bar (`.nav-link`) in every page, the same way
+  `greek-alphabet.html` is — add it to that same nav block in any future page you create.
+
+## Content notes
 
 A few bugs from the original site were fixed during this restyle — see the conversation this was
 built in for the full list (mislabeled units on Light Year, Solar Mass, and electron/proton mass;
