@@ -129,6 +129,19 @@ main { max-width: 1180px; margin: 0 auto; padding: 32px 28px 80px; }
 .copy-grid.constants .copy-chip.copied { border-color: var(--correct); background: var(--correct-bg); }
 .copy-grid.constants .copy-chip.copied .sym { color: var(--correct); }
 
+/* ---------- reaction chips (Reactions page) ---------- */
+.reaction-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.reaction-chip {
+  border-radius: var(--radius); padding: 12px 16px; flex-direction: column; align-items: flex-start;
+  gap: 4px; width: 100%; text-align: left;
+}
+.reaction-chip .sym { font-size: 1rem; line-height: 1.35; white-space: normal; word-break: break-word; }
+.reaction-chip .rx-label {
+  font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 0.72rem;
+  color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.03em;
+}
+.reaction-chip.copied .rx-label { color: var(--correct); }
+
 footer { text-align: center; padding: 26px; color: var(--ink-soft); font-size: 0.8rem; font-family: 'IBM Plex Mono', monospace; }
 footer a { color: var(--ink-soft); }
 
