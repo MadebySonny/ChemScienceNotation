@@ -15,9 +15,12 @@ No build step, no dependencies — just static HTML, CSS, and vanilla JS.
 ├── greek-alphabet.html   # Greek alphabet (uppercase + lowercase)
 ├── reactions.html        # copy-paste chemical reactions (8 categories, 64 equations)
 ├── qr-generator.html     # QR code generator (text/URL → downloadable PNG)
+├── periodic-table.html   # interactive periodic table (hover card, 1/2/3-click copy)
 ├── styles.css            # shared stylesheet (ChemBench design tokens)
 ├── script.js             # shared copy-to-clipboard + toast logic
-└── qr.js                 # QR generator logic (only loaded by qr-generator.html)
+├── qr.js                 # QR generator logic (only loaded by qr-generator.html)
+├── elements-data.js      # all 118 elements: number, symbol, name, mass, category, grid position
+└── periodic-table.js     # builds the grid + hover/click behavior (only loaded by periodic-table.html)
 ```
 
 ## Running it locally
@@ -123,6 +126,32 @@ ChemBench, a worksheet, or a reaction lookup on a handout or slide.
   levels tolerate more damage/dirt but produce a denser pattern, which is called out in the label.
 - Same nav-link pattern as the other pages — add `qr-generator.html` to the shared nav block if
   you build more standalone tool pages later.
+
+## Periodic table (periodic-table.html)
+
+All 118 elements laid out in the standard 18-column grid (plus the two-row lanthanide/actinide
+footer), color-coded by category (alkali metal, transition metal, metalloid, noble gas, etc. —
+see the legend under the table).
+
+- **Rest state**: each cell is a miniature version of the full card — atomic number, symbol,
+  name, and molar mass — just small enough to fit the grid.
+- **Hover or keyboard-focus**: the cell's `transform: scale()` pops it up to full card size
+  (atomic number on top, big symbol in the middle, name below, molar mass in g/mol at the
+  bottom — matching the classic element-card look), overlapping neighboring cells with a raised
+  `z-index`. Nothing else in the grid reflows, since it's a CSS transform, not a layout change.
+- **Click behavior**, handled by counting clicks within a ~450ms window:
+  - 1 click → copies the symbol (`C`)
+  - double-click → copies the name (`Carbon`)
+  - triple-click → copies the molar mass (`12.011 g/mol`)
+  All three reuse `copyPlain()` from `script.js`, so the toast and the chip flash-on-copy look
+  and feel exactly like the rest of the site.
+- Data lives in `elements-data.js` as a plain `ELEMENTS` array (`n`, `s`, `name`, `mass`,
+  `massPlain`, `cat`, `col`, `row`) sourced from a standard reference dataset; `periodic-table.js`
+  builds the DOM from it at page load rather than hand-writing 118 buttons in HTML. Radioactive
+  elements without a standard atomic weight are shown in brackets (e.g. `[98]` for Technetium),
+  matching normal periodic table convention.
+- To add a category color, add a `.el-<category>` rule (with an `--el-color` custom property) in
+  `styles.css` and a matching swatch in the `.ptable-legend` block in `periodic-table.html`.
 
 ## Content notes
 

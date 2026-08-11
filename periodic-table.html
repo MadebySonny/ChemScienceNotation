@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Periodic Table — ScienceNotations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <h1><span class="glyph">π</span> ScienceNotations</h1>
+      <span class="eyebrow">copy-paste notation & constants library</span>
+    </div>
+    <a class="badge" href="https://o-tran.github.io/chembench/" target="_blank" rel="noopener">chembench companion</a>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-link" href="index.html">Notations</a>
+    <a class="nav-link" href="greek-alphabet.html">Greek Alphabet</a>
+    <a class="nav-link" href="reactions.html">Reactions</a>
+    <a class="nav-link" href="qr-generator.html">QR Code</a>
+    <a class="nav-link active" href="periodic-table.html">Periodic Table</a>
+    <a class="nav-link external" href="https://o-tran.github.io/chembench/" target="_blank" rel="noopener">ChemBench ↗</a>
+  </div>
+</nav>
+
+<main>
+  <div class="hero">
+    <h2>An interactive periodic table for quick copying</h2>
+    <p>Hover any element to see its full card — atomic number, symbol, name, and molar mass in g/mol. Click to copy.</p>
+    <ol>
+      <li><strong>1 click</strong> copies the chemical symbol (e.g. <span class="mono">C</span>).</li>
+      <li><strong>Double-click</strong> copies the element name (e.g. <span class="mono">Carbon</span>).</li>
+      <li><strong>Triple-click</strong> copies the molar mass (e.g. <span class="mono">12.011 g/mol</span>).</li>
+    </ol>
+  </div>
+
+  <div class="ptable-scroll">
+    <div class="ptable" id="ptable" role="grid" aria-label="Periodic table of the elements"></div>
+
+    <div class="ptable-legend">
+      <span class="legend-item"><span class="swatch el-alkali-metal"></span>Alkali metal</span>
+      <span class="legend-item"><span class="swatch el-alkaline-earth-metal"></span>Alkaline earth metal</span>
+      <span class="legend-item"><span class="swatch el-transition-metal"></span>Transition metal</span>
+      <span class="legend-item"><span class="swatch el-post-transition-metal"></span>Post-transition metal</span>
+      <span class="legend-item"><span class="swatch el-metalloid"></span>Metalloid</span>
+      <span class="legend-item"><span class="swatch el-nonmetal"></span>Nonmetal</span>
+      <span class="legend-item"><span class="swatch el-halogen"></span>Halogen</span>
+      <span class="legend-item"><span class="swatch el-noble-gas"></span>Noble gas</span>
+      <span class="legend-item"><span class="swatch el-lanthanide"></span>Lanthanide</span>
+      <span class="legend-item"><span class="swatch el-actinide"></span>Actinide</span>
+      <span class="legend-item"><span class="swatch el-unknown"></span>Unconfirmed properties</span>
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2024–2026 Oanh Sonny Tran. All rights reserved. · <a href="mailto:otxtra1234@gmail.com">Contact Me</a>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+<script src="elements-data.js"></script>
+<script src="periodic-table.js"></script>
+</body>
+</html>

@@ -1,3 +1,24 @@
+/* =========================================================================
+   ScienceNotations — shared stylesheet
+   ChemBench design tokens + layout + components, used by every page.
+
+   Contents
+   1. Design tokens
+   2. Reset & base
+   3. Header
+   4. Navigation
+   5. Main layout & hero
+   6. Footer
+   7. Toast (copy confirmation)
+   8. TOC sidebar + notation sections   (index.html, reactions.html, greek-alphabet.html)
+   9. Copy chips                       (index.html, greek-alphabet.html)
+   10. Page: Reactions                 (reaction chips)
+   11. Page: QR code generator
+   12. Page: Periodic table
+   13. Accessibility
+   ========================================================================= */
+
+/* ---------- 1. design tokens ---------- */
 :root {
   --paper: #F1F5F4;
   --panel: #FFFFFF;
@@ -18,6 +39,7 @@
   --shadow: 0 1px 2px rgba(20,37,36,0.06), 0 4px 16px rgba(20,37,36,0.07);
 }
 
+/* ---------- 2. reset & base ---------- */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
@@ -37,7 +59,7 @@ body {
 a { color: var(--blue-deep); }
 sub, sup { font-size: 0.72em; }
 
-/* ---------- header / nav ---------- */
+/* ---------- 3. header ---------- */
 header {
   background: var(--ink);
   color: var(--paper);
@@ -50,6 +72,7 @@ header {
 .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; color: #9FB8B5; }
 .badge { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid #3E5250; color: #B9CFCC; padding: 4px 9px; border-radius: 20px; text-decoration: none; }
 
+/* ---------- 4. navigation ---------- */
 nav { background: var(--panel); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 20; }
 .nav-inner { max-width: 1180px; margin: 0 auto; display: flex; overflow-x: auto; }
 .nav-link {
@@ -64,14 +87,28 @@ nav { background: var(--panel); border-bottom: 1px solid var(--line); position: 
 
 main { max-width: 1180px; margin: 0 auto; padding: 32px 28px 80px; }
 
-/* ---------- hero ---------- */
+/* ---------- 5. main layout & hero ---------- */
 .hero { margin-bottom: 30px; }
 .hero h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; margin: 0 0 8px; letter-spacing: -0.01em; }
 .hero p { color: var(--ink-soft); max-width: 68ch; margin: 0 0 6px; }
 .hero ol { color: var(--ink-soft); max-width: 68ch; margin: 10px 0 0; padding-left: 20px; }
 .hero ol li { margin-bottom: 3px; }
 
-/* ---------- layout: sticky contents sidebar + sections ---------- */
+/* ---------- 6. footer ---------- */
+footer { text-align: center; padding: 26px; color: var(--ink-soft); font-size: 0.8rem; font-family: 'IBM Plex Mono', monospace; }
+footer a { color: var(--ink-soft); }
+
+/* ---------- 7. toast (copy confirmation) ---------- */
+.toast {
+  position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px);
+  background: var(--ink); color: var(--paper); padding: 11px 20px; border-radius: 8px; font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem; opacity: 0; transition: opacity .25s ease, transform .25s ease; pointer-events: none; z-index: 50;
+  max-width: 90vw; text-align: center;
+}
+.toast .toast-sym { font-family: 'IBM Plex Mono', monospace; color: var(--amber); margin-left: 4px; }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ---------- 8. sticky TOC sidebar + notation sections ---------- */
 .workbench { display: grid; grid-template-columns: 220px 1fr; gap: 22px; align-items: start; }
 @media (max-width: 800px) { .workbench { grid-template-columns: 1fr; } .toc { position: static; } }
 
@@ -110,7 +147,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 32px 28px 80px; }
 }
 .notation-section h4:first-of-type { margin-top: 16px; }
 
-/* ---------- copy chips ---------- */
+/* ---------- 9. copy chips ---------- */
 .copy-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .copy-chip {
   background: var(--paper); border: 1.5px solid var(--line); border-radius: 20px;
@@ -129,7 +166,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 32px 28px 80px; }
 .copy-grid.constants .copy-chip.copied { border-color: var(--correct); background: var(--correct-bg); }
 .copy-grid.constants .copy-chip.copied .sym { color: var(--correct); }
 
-/* ---------- reaction chips (Reactions page) ---------- */
+/* ---------- 10. page: reactions (reaction chips) ---------- */
 .reaction-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
 .reaction-chip {
   border-radius: var(--radius); padding: 12px 16px; flex-direction: column; align-items: flex-start;
@@ -142,7 +179,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 32px 28px 80px; }
 }
 .reaction-chip.copied .rx-label { color: var(--correct); }
 
-/* ---------- QR code generator page ---------- */
+/* ---------- 11. page: QR code generator ---------- */
 .qr-layout { display: grid; grid-template-columns: minmax(280px, 380px) 1fr; gap: 22px; align-items: start; }
 @media (max-width: 800px) { .qr-layout { grid-template-columns: 1fr; } }
 
@@ -202,18 +239,69 @@ main { max-width: 1180px; margin: 0 auto; padding: 32px 28px 80px; }
 #qr-preview canvas, #qr-preview img { border-radius: 6px; box-shadow: var(--shadow); }
 .qr-preview-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; justify-content: center; }
 
-footer { text-align: center; padding: 26px; color: var(--ink-soft); font-size: 0.8rem; font-family: 'IBM Plex Mono', monospace; }
-footer a { color: var(--ink-soft); }
-
-.toast {
-  position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px);
-  background: var(--ink); color: var(--paper); padding: 11px 20px; border-radius: 8px; font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.85rem; opacity: 0; transition: opacity .25s ease, transform .25s ease; pointer-events: none; z-index: 50;
-  max-width: 90vw; text-align: center;
+/* ---------- 12. page: periodic table ---------- */
+.ptable-scroll {
+  overflow-x: auto; overflow-y: visible; padding: 50px 40px 70px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
 }
-.toast .toast-sym { font-family: 'IBM Plex Mono', monospace; color: var(--amber); margin-left: 4px; }
-.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.ptable {
+  display: grid;
+  grid-template-columns: repeat(18, 58px);
+  grid-template-rows: repeat(7, 66px) 18px repeat(2, 66px);
+  gap: 3px;
+  width: max-content;
+  margin: 0 auto;
+}
 
+.element {
+  position: relative;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: 100%; height: 100%;
+  border: 1px solid rgba(20, 37, 36, 0.18); border-radius: 5px;
+  background: var(--el-color, var(--paper)); color: #1a1a1a;
+  cursor: pointer; padding: 3px 2px; overflow: hidden;
+  font-family: 'Space Grotesk', sans-serif;
+  transition: transform .16s ease, box-shadow .16s ease;
+  transform-origin: center center;
+}
+.element:hover, .element:focus-visible {
+  transform: scale(3.15);
+  z-index: 60;
+  box-shadow: 0 8px 28px rgba(20,37,36,0.35);
+  border-color: rgba(20, 37, 36, 0.35);
+  outline: none;
+}
+.element.copied { transform: scale(3.15); z-index: 60; box-shadow: 0 8px 28px rgba(20,37,36,0.35); }
+
+.element .num { font-size: 0.5rem; font-weight: 600; line-height: 1; }
+.element .sym { font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 1.25rem; line-height: 1.05; margin: 1px 0; }
+.element .ename { font-size: 0.4rem; font-weight: 500; line-height: 1.05; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.element .mass { font-size: 0.38rem; font-weight: 500; line-height: 1.1; text-align: center; }
+.element .mass .unit { font-size: 0.85em; opacity: 0.75; }
+
+/* category colors */
+.el-alkali-metal          { --el-color: #FFAB7A; }
+.el-alkaline-earth-metal  { --el-color: #FFD08A; }
+.el-transition-metal      { --el-color: #93C6F0; }
+.el-post-transition-metal { --el-color: #8FD3C6; }
+.el-metalloid             { --el-color: #CDA4E8; }
+.el-nonmetal              { --el-color: #8DCB5E; }
+.el-halogen               { --el-color: #F6E58D; }
+.el-noble-gas             { --el-color: #ABA6E8; }
+.el-lanthanide            { --el-color: #F7A8C4; }
+.el-actinide              { --el-color: #EF7FA6; }
+.el-unknown               { --el-color: #C6CFCE; }
+
+.ptable-legend {
+  display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line-soft);
+  justify-content: center;
+}
+.ptable-legend .legend-item {
+  display: flex; align-items: center; gap: 7px; font-family: 'Space Grotesk', sans-serif; font-size: 0.76rem; color: var(--ink-soft);
+}
+.ptable-legend .swatch { width: 14px; height: 14px; border-radius: 4px; border: 1px solid rgba(20,37,36,0.2); }
+
+/* ---------- 13. accessibility ---------- */
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }
