@@ -14,15 +14,17 @@ No build step, no dependencies — just static HTML, CSS, and vanilla JS.
 ├── index.html            # main notations page (12 sections)
 ├── greek-alphabet.html   # Greek alphabet (uppercase + lowercase)
 ├── reactions.html        # copy-paste chemical reactions (8 categories, 64 equations)
+├── qr-generator.html     # QR code generator (text/URL → downloadable PNG)
 ├── styles.css            # shared stylesheet (ChemBench design tokens)
-└── script.js             # shared copy-to-clipboard + toast logic
+├── script.js             # shared copy-to-clipboard + toast logic
+└── qr.js                 # QR generator logic (only loaded by qr-generator.html)
 ```
 
 ## Running it locally
 
 No install needed. Either:
 
-- Open `index.html` directly in a browser, or
+- Open `index.html` directly in a browser
 - Go to the GitHub-hosted page: [Chem Science Notation](https://madebysonny.github.io/ChemScienceNotation/index.html)
 - Serve the folder so relative paths and the clipboard API behave exactly like production:
   ```
@@ -102,6 +104,26 @@ Notes on the pattern:
 - `reactions.html` is linked from the shared nav bar (`.nav-link`) in every page, the same way
   `greek-alphabet.html` is — add it to that same nav block in any future page you create.
 
+## QR code generator (qr-generator.html)
+
+A standalone tool page — type or paste text/a URL and it renders a live QR code (debounced as you
+type), with **Download PNG** and **Copy Image** buttons. Good for putting a scannable link to
+ChemBench, a worksheet, or a reaction lookup on a handout or slide.
+
+- Uses the [qrcodejs](https://github.com/davidshimjs/qrcodejs) library (MIT, ~4KB) loaded from
+  cdnjs — no npm install or build step, consistent with the rest of the site.
+- All logic lives in `qr.js`, loaded only by `qr-generator.html`, so it doesn't bloat the shared
+  `script.js` used on every other page.
+- `qr.js` renders into a `<canvas>` (the library's default when supported) so the download/copy
+  buttons can read the pixels directly via `canvas.toDataURL()` / `canvas.toBlob()`.
+- "Copy Image" uses the Clipboard API's `ClipboardItem` with an `image/png` blob; if the browser
+  blocks it (older Safari, insecure context), the error banner tells the user to use Download PNG
+  instead — there's no silent failure.
+- Size (180–512px) and error-correction level (L/M/Q/H) are both selectable; higher correction
+  levels tolerate more damage/dirt but produce a denser pattern, which is called out in the label.
+- Same nav-link pattern as the other pages — add `qr-generator.html` to the shared nav block if
+  you build more standalone tool pages later.
+
 ## Content notes
 
 A few bugs from the original site were fixed during this restyle — see the conversation this was
@@ -109,4 +131,3 @@ built in for the full list (mislabeled units on Light Year, Solar Mass, and elec
 a couple of stray characters in copied values; a malformed HTML tag). No numeric values were
 changed, only unit labels, copy-value typos, and one label that didn't match its actual copied
 value (Pico).
-

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Generator — ScienceNotations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <h1><span class="glyph">π</span> ScienceNotations</h1>
+      <span class="eyebrow">copy-paste notation & constants library</span>
+    </div>
+    <a class="badge" href="https://o-tran.github.io/chembench/" target="_blank" rel="noopener">chembench companion</a>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-link" href="index.html">Notations</a>
+    <a class="nav-link" href="greek-alphabet.html">Greek Alphabet</a>
+    <a class="nav-link" href="reactions.html">Reactions</a>
+    <a class="nav-link active" href="qr-generator.html">QR Code</a>
+    <a class="nav-link external" href="https://o-tran.github.io/chembench/" target="_blank" rel="noopener">ChemBench ↗</a>
+  </div>
+</nav>
+
+<main>
+  <div class="hero">
+    <h2>Quick QR codes for handouts and slides</h2>
+    <p>Type or paste any text or URL — the code updates as you type. Good for linking a worksheet to ChemBench, a reaction lookup, a syllabus page, or anything else students need to scan.</p>
+  </div>
+
+  <div class="qr-layout">
+    <div class="qr-panel">
+      <h2><span class="section-index">01</span> Content</h2>
+
+      <div class="qr-field">
+        <label for="qr-text">Text or URL</label>
+        <textarea id="qr-text" placeholder="https://o-tran.github.io/chembench/" autofocus></textarea>
+      </div>
+
+      <div class="qr-row">
+        <div class="qr-field">
+          <label for="qr-size">Size</label>
+          <select id="qr-size">
+            <option value="180">Small (180px)</option>
+            <option value="256" selected>Medium (256px)</option>
+            <option value="384">Large (384px)</option>
+            <option value="512">Extra large (512px)</option>
+          </select>
+        </div>
+        <div class="qr-field">
+          <label for="qr-level">Error correction</label>
+          <select id="qr-level">
+            <option value="L">Low (L) — smallest pattern</option>
+            <option value="M" selected>Medium (M) — recommended</option>
+            <option value="Q">Quartile (Q)</option>
+            <option value="H">High (H) — best if printing small</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="qr-error" id="qr-error"></div>
+
+      <div class="qr-actions">
+        <button class="qr-btn" id="qr-generate-btn">Generate</button>
+      </div>
+    </div>
+
+    <div class="qr-preview-panel">
+      <div id="qr-preview" class="qr-empty"><span>Your QR code will appear here</span></div>
+      <div class="qr-preview-actions">
+        <button class="qr-btn" id="qr-download-btn" disabled>Download PNG</button>
+        <button class="qr-btn secondary" id="qr-copy-btn" disabled>Copy Image</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2024–2026 Oanh Sonny Tran. All rights reserved. · <a href="mailto:otxtra1234@gmail.com">Contact Me</a>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="qr.js"></script>
+</body>
+</html>
