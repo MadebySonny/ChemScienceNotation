@@ -100,7 +100,7 @@ Notes on the pattern:
   `Fe<sup>3+</sup>` → `Fe³⁺`.
 - Reaction arrows don't need markup — just the unicode character: `→` for one-way reactions, `⇌`
   for equilibrium.
-- Precipitates get a trailing `↓` right after the formula (e.g. `AgCl↓`).
+- Precipitates get a trailing `(s)` right after the formula (e.g. `AgCl(s)`).
 - To add a new category, copy a whole `<section id="rx-...">` block, add a matching `<li>` to the
   `.toc` list, and give the section a unique `rx-` id — scroll-spy picks it up automatically, same
   as `index.html`.
